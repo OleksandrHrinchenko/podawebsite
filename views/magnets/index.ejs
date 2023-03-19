@@ -1,0 +1,16 @@
+<%- include ("../partials/header") %>
+<h2 class="section-header">МАГНІТИ</h2>
+<hr class="section-header-hr">
+<div class="main">
+    <% magnets.forEach(function(magnet){ %>
+    <a class="product-more-info" href="/magnets/<%= magnet._id %>">
+        <div class="product">
+            <img class="product-image" src="/Images/gallery/magnets/<%= magnet.image %>">
+            <p class="product-name"><%= magnet.name %></p>
+            <p class="product-price"><%= magnet.price %> &#8372;</p>
+        </div>
+        <hr class="product-hr">
+    </a>
+    <% }); %>
+</div>
+<%- include ("../partials/footer") %>

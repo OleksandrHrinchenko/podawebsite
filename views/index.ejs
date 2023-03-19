@@ -1,0 +1,56 @@
+<%- include ("./partials/header") %>
+<div class="landing-image">
+    <div>
+        <h2>
+            Гаманець “PODA” із високоякісної шкіри з індивідуальним гравіюваням
+        </h2>
+        <div class="btn">
+            <a href="#">ДІЗНАТИСЬ БІЛЬШЕ</a>
+        </div>
+    </div>
+</div>
+<h2 class="new">ПОПУЛЯРНЕ</h2>
+<div class="main">
+    <!-- Новинки -->
+    <% products.forEach(function(product){ %>
+    <a class="product-more-info" href="#">
+        <div class="product">
+            <img class="product-image" src="<%= product.image %>">
+            <p class="product-name"><%= product.name %></p>
+            <p class="product-price"><%= product.price %> &#8372;</p>
+        </div>
+    </a>
+    <% }); %>
+</div>
+<!-- visual stop #1 -->
+<div class="visual-stop">
+    <div class="visual-stop-1">
+        <div>
+            ФУТБОЛКИ<br>З ВИШИТИМИ,<br>АБО ДРУКОВАНИМИ<br>НАПИСАМИ<br>ТА ЗОБРАЖЕННЯМИ
+        </div>
+    </div>
+    <div class="reviews">
+    </div>
+    <div class="wallets">
+        <div class="women">
+            <h4>Жіночі гаманці</h4>
+        </div>
+        <div class="men">
+            <h4>Чоловічі гаманці</h4>
+        </div>
+    </div>
+    <!-- visual stop #2 -->
+    <div class="visual-stop-2">
+        <div>
+            ЧАШКИ<br>З ПРИНТАМИ<br>НА БУДЬ ЯКИЙ СМАК
+        </div>
+    </div>
+    <!-- visual stop #3 -->
+    <div class="visual-stop-3">
+        <div>
+            БРЕЛОКИ<br>З ПОБАЖАННЯМИ<br>ТА ФОТО НА ЗВОРОТІ
+        </div>
+    </div>
+</div>
+
+<%- include ("./partials/footer") %>

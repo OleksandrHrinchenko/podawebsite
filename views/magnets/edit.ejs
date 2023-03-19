@@ -1,0 +1,19 @@
+<%- include ("../partials/header") %>
+<h1>Admin panel</h1>
+<h2>EDIT <%= magnet.name %></h2>
+<form action="/magnets/<%= magnet._id %>?_method=PUT" method="POST">
+    <label for="name">Назва:</label>
+    <input type="text" name="magnet[name]" value="<%= magnet.name %>">
+    <br>
+    <label for="price">Ціна:</label>
+    <input type="text" name="magnet[price]" value="<%= magnet.price %>">
+    <br>
+    <label for="description">Опис:</label>
+    <textarea name="magnet[description]" id="" cols="30" rows="10"><%= magnet.description %></textarea>
+    <br>
+    <label for="image">Зображення:</label>
+    <input type="file" name="magnet[image]" accept=".jpg,.png">
+    <br>
+    <button>Додати</button>
+</form>
+<%- include ("../partials/footer") %>

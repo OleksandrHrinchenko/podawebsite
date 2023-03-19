@@ -1,0 +1,19 @@
+<%- include ("../partials/header") %>
+<h1>Admin panel</h1>
+<h2>EDIT <%= hoodie.name %></h2>
+<form action="/hoodies/<%= hoodie._id %>?_method=PUT" method="POST">
+    <label for="name">Назва:</label>
+    <input type="text" name="hoodie[name]" value="<%= hoodie.name %>">
+    <br>
+    <label for="price">Ціна:</label>
+    <input type="text" name="hoodie[price]" value="<%= hoodie.price %>">
+    <br>
+    <label for="description">Опис:</label>
+    <textarea name="hoodie[description]" id="" cols="30" rows="10"><%= hoodie.description %></textarea>
+    <br>
+    <label for="image">Зображення:</label>
+    <input type="file" name="hoodie[image]" accept=".jpg,.png">
+    <br>
+    <button>Додати</button>
+</form>
+<%- include ("../partials/footer") %>

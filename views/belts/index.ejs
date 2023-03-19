@@ -1,0 +1,16 @@
+<%- include ("../partials/header") %>
+<h2 class="section-header">РЕМЕНІ</h2>
+<hr class="section-header-hr">
+<div class="main">
+    <% belts.forEach(function(belt){ %>
+    <a class="product-more-info" href="/belts/<%= belt._id %>">
+        <div class="product">
+            <img class="product-image" src="/Images/gallery/belts/<%= belt.image %>">
+            <p class="product-name"><%= belt.name %></p>
+            <p class="product-price"><%= belt.price %> &#8372;</p>
+        </div>
+        <hr class="product-hr">
+    </a>
+    <% }); %>
+</div>
+<%- include ("../partials/footer") %>

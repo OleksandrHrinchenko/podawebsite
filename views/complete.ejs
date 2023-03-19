@@ -1,0 +1,15 @@
+<%- include ("partials/header") %>
+
+<h1>Ваше замовлення прийняте</h1>
+
+
+
+
+<script>
+    localStorage.clear();
+    window.setTimeout(function () {
+        window.location.href = "http://localhost:3000/";
+
+    }, 3000);
+</script>
+<%-include("partials/footer") %>

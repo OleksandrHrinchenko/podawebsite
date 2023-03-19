@@ -1,0 +1,16 @@
+<%- include ("../partials/header") %>
+<h2 class="section-header">ГАМАНЦІ</h2>
+<hr class="section-header-hr">
+<div class="main">
+    <% wallets.forEach(function(wallet){ %>
+    <a class="product-more-info" href="/wallets/<%= wallet._id %>">
+        <div class="product">
+            <img class="product-image" src="/Images/gallery/<%= wallet.image %>">
+            <p class="product-name"><%= wallet.name %></p>
+            <p class="product-price"><%= wallet.price %> &#8372;</p>
+        </div>
+        <hr class="product-hr">
+    </a>
+    <% }); %>
+</div>
+<%- include ("../partials/footer") %>

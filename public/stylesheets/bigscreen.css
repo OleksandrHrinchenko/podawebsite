@@ -1,0 +1,153 @@
+.menu-big>ul>li {
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+
+footer {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media only screen and (min-width: 1010px) {
+    .menu-big>ul>li {
+        font-size: 1rem;
+    }
+}
+
+.product-hr {
+    display: none;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+
+.show-product-page-image-container {
+    width: 50%;
+}
+
+#product-description {
+    display: none;
+}
+
+#product-description-widescreen {
+    display: block;
+    color: green;
+    position: absolute;
+    right: 0px;
+    top: 300px;
+    width: 50%;
+}
+
+
+.show-product-page ul {
+    width: 50%;
+    position: absolute;
+    top: 200px;
+    right: 0px;
+}
+
+#add-to-cart-wide {
+    display: inline-block;
+    width: 20%;
+}
+
+#add-to-cart {
+    display: none;
+}
+
+.cart_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+}
+
+#check-out {
+    width: 50%;
+    left: 25%;
+}
+
+.added-product-image {
+    width: 40%;
+}
+
+.buy-button-edit {
+    width: 40%;
+}
+
+.buy-button-confirmation {
+    width: 40%;
+    position: relative;
+}
+
+.pre-products {
+    height: 400px;
+}
+
+.show-product-page-h2 {
+    text-align: center;
+}
+
+.pre-products-clothes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+}
+
+.pre-products-leather {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px;
+}
+
+.pre-products h1 {
+    padding-top: 30%;
+    color: white;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+.pre-tshirts-page {
+    background-image: url('../Images/gallery/t-shirts-clothes-page.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.pre-wallets-page {
+    background-image: url('../Images/gallery/wallets-leather-page.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.pre-belts-page {
+    background-image: url('../Images/gallery/belts-leather-page.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    height: 400px;
+    margin-top: 0px;
+}
+
+.pre-hoodie-page {
+    background-image: url('../Images/gallery/hoodies-clothes-page.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+.pre-covers-page {
+    background-image: url('../Images/gallery/covers-leather-page.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+.contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

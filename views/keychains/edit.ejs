@@ -1,0 +1,19 @@
+<%- include ("../partials/header") %>
+<h1>Admin panel</h1>
+<h2>EDIT <%= keychain.name %></h2>
+<form action="/keychains/<%= keychain._id %>?_method=PUT" method="POST">
+    <label for="name">Назва:</label>
+    <input type="text" name="keychain[name]" value="<%= keychain.name %>">
+    <br>
+    <label for="price">Ціна:</label>
+    <input type="text" name="keychain[price]" value="<%= keychain.price %>">
+    <br>
+    <label for="description">Опис:</label>
+    <textarea name="keychain[description]" id="" cols="30" rows="10"><%= keychain.description %></textarea>
+    <br>
+    <label for="image">Зображення:</label>
+    <input type="file" name="keychain[image]" accept=".jpg,.png">
+    <br>
+    <button>Додати</button>
+</form>
+<%- include ("../partials/footer") %>

@@ -1,0 +1,18 @@
+<%- include ("../partials/header") %>
+<h1>Admin panel</h1>
+<form action="/wallets" method="POST">
+    <label for="name">Назва:</label>
+    <input type="text" name="name">
+    <br>
+    <label for="price">Ціна:</label>
+    <input type="text" name="price">
+    <br>
+    <label for="description">Опис:</label>
+    <textarea name="description" id="" cols="30" rows="10"></textarea>
+    <br>
+    <label for="image">Зображення:</label>
+    <input type="file" name="image" accept=".jpg,.png">
+    <br>
+    <button>Додати</button>
+</form>
+<%- include ("../partials/footer") %>

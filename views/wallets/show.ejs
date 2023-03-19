@@ -1,0 +1,195 @@
+<%- include ("../partials/header") %>
+
+<div class="show-product-page">
+    <h2 id="product-name" class="show-product-page-h2"><%= wallet.name %></h2>
+    <div class="show-product-page-image-container">
+        <img class="show-product-page-image" id="show-product-page-image" src="/Images/gallery/<%= wallet.image %>"
+            alt="">
+        <div id="engraving-img-preview" class="engraving-preview"></div>
+        <div id="engraving-text-preview" class="engraving-preview"></div>
+    </div>
+    <p id="product-description-widescreen"><%= wallet.description %></p>
+
+    <ul>
+        <li class="instock"><i class="far fa-check-circle"></i>&nbsp;В наявності</li>
+        <li id="product-price" class="show-product-page-price"><%= wallet.price %> &#8372;</li>
+        <li class="show-product-page-wishlist"><i class="fas fa-heart fa-lg"></i>&nbsp;До обраного</li>
+        <li><button class="buy-button" id="add-to-cart-wide" onclick="add_to_cart()" href=""><i
+                    class="fas fa-shopping-cart"></i>&nbsp;Купити</button></li>
+    </ul>
+    <p id="product-description"><%= wallet.description %></p>
+    <% if(currentUser){ %>
+    <div class="edit_or_delete">
+        <button class="edit-post"><a href="<%= wallet._id%>/edit">EDIT</a></button>
+        <form action="/wallets/<%= wallet._id %>?_method=DELETE" method="POST">
+            <button class="delete-post">DELETE</button>
+        </form>
+    </div>
+    <% } %>
+
+
+    <!-- <div class="addons">
+        <div class="engraving">
+            <ul>
+                <li class="add-engraving">
+                    <input type="checkbox" id="engraving-toggle" class="visually-hidden">
+                    <i class="fas fa-plus"></i>&nbsp;Додати гравіювання &nbsp;&nbsp;&nbsp;+100 &#8372;
+                    <ul class="engraving-types">
+                        <li class="engraving-type-one">
+                            <input type="checkbox" id="engraving-images-toggle" class="visually-hidden">
+                            <i class="fas fa-plus"></i>Зображення
+                            <div id="engraving-images">
+                                <div onclick="show_design(0)" id="w-design-0">
+                                    <img src="/Images/gallery/wallet-engraving/img0.png" alt="">
+                                </div>
+                                <div onclick="show_design(1)" id="w-design-1">
+                                    <img src="/Images/gallery/wallet-engraving/img1.png" alt="">
+                                </div>
+                                <div onclick="show_design(2)" id="w-design-2">
+                                    <img src="/Images/gallery/wallet-engraving/img2.png" alt="">
+                                </div>
+                                <div onclick="show_design(3)" id="w-design-3">
+                                    <img src="/Images/gallery/wallet-engraving/img3.png" alt="">
+                                </div>
+                                <div onclick="show_design(4)" id="w-design-4">
+                                    <img src="/Images/gallery/wallet-engraving/img4.png" alt="">
+                                </div>
+                                <div onclick="show_design(5)" id="w-design-5">
+                                    <img src="/Images/gallery/wallet-engraving/img5.png" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="engraving-type-two">
+                            <input type="checkbox" id="engraving-phrases-toggle" class="visually-hidden">
+                            <i class="fas fa-plus"></i>Побажання
+                            <div id="engraving-phrases">
+                                <p onclick="show_design_text(0)" id="w-design-text-0" class="bg-blue">Без текста.</p>
+                                <p onclick="show_design_text(1)" id="w-design-text-1">
+                                    Тебя мы любим уважаем и очень сильно обожаем.
+                                </p>
+                                <p class="bg-blue">Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p>Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p class="bg-blue">Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p>Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p class="bg-blue">Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p>Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p class="bg-blue">Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p>Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p class="bg-blue">Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p>Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p class="bg-blue">Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p>Тебя мы любим уважаем и очень сильно обожаем.</p>
+                                <p class="bg-blue">Тебя мы любим уважаем и очень сильно обожаем.</p>
+                            </div>
+                        </li>
+                        <li class="engraving-type-three">
+                            <input type="checkbox" id="engraving-text-toggle" class="visually-hidden">
+                            <i class="fas fa-plus"></i>Свій текст
+                            <div id="engraving-text">
+                                <textarea name="" id="own-text" cols="30" rows="10"></textarea>
+                                <button class="text-buttons" onclick="engraving_own_text()">Підтвердити текст</button>
+                            </div>
+                            <div id="my-own-text">
+                                <p>Текст для гравіювання:<br><span id="my-own-text-span"></span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="packing">
+            <ul>
+                <li onclick="packing()" class="add-packing"><input type="checkbox" id="packing-toggle"
+                        class="visually-hidden"><i class="fas fa-plus"></i>&nbsp;Подарункова
+                    упаковка
+                    <ul class="packing-types" id="packing-hide-show">
+                        <li class="packing-type-one" onclick="hide_envelope_text(0)">
+                            <input type="radio" id="packing-toggle-one" class="visually-hidden" name="packing"
+                                checked>&nbsp;Стандарт &nbsp;&nbsp;+ 0 &#8372;
+                        </li>
+                        <li class="packing-type-two" onclick="hide_envelope_text(1)">
+                            <input type="radio" id="packing-toggle-two" class="visually-hidden"
+                                name="packing">&nbsp;Крафтовий конверт із побажанням
+                            &nbsp;&nbsp;+ 15 &#8372;
+                            <div id="envelope-text">
+                                <textarea style="width: 100%" name="" id="envelope-text-textarea" cols="30"
+                                    rows="10"></textarea>
+                                <button class="text-buttons" onclick="envelope_text()">Підтвердити текст</button>
+                            </div>
+                        </li>
+                        <li class="packing-type-three" onclick="hide_envelope_text(2)">
+                            <input type="radio" id="packing-toggle-three" class="visually-hidden"
+                                name="packing">&nbsp;Дерев'яна коробка &nbsp;&nbsp;+ 30 &#8372;
+                        </li>
+                    </ul>
+                </li>
+                <p id="envelope-custom-text" class="bold-text">Текст на крафтовий конверт:<br>
+                    <span id="envelope-text-span"></span></p>
+            </ul>
+
+            <div id="packing-img"></div>
+        </div>
+    </div> -->
+    <button class="buy-button" id="add-to-cart" onclick="add_to_cart()">
+        <i class="fas fa-shopping-cart"></i>&nbsp;Купити</button>
+    <div id="show-cart" class="show-cart-class">
+        <div class="show-cart-main">
+            <p class="added-to-cart">Обраний товар</p>
+            <div class="added-product">
+                <div>
+                    <img class="added-product-image" src="/Images/gallery/<%= wallet.image %>" alt="">
+                    <h4><%= wallet.name %></h4>
+                    <p><%= wallet.description %></p>
+                    <p id="wallet_price"><%= wallet.price %> грн</p>
+
+                </div>
+                <!-- <div>
+                    <p>Гравіювання: <br>
+                        <div id="first-buy-engraving-img"></div>
+                        <p id="first-buy-text"></p>
+                        <br>
+                        <p id="first-buy-own-text"></p>
+                    </p>
+                </div> -->
+                <div></div>
+                <div>
+                    <button class="buy-button-edit" onclick="add_to_cart()">Продовжити покупки</button>
+                </div>
+                <a href="/cart">
+                    <button class="buy-button-confirmation">Оформити замовлення</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="show-cart-2" class="show-cart-class">
+        <div class="show-cart-main">
+            <p class="added-to-cart">Обраний товар</p>
+            <div class="added-product">
+                <div>
+                    <img class="added-product-image" src="/Images/gallery/<%= wallet.image %>" alt="">
+                    <h4><%= wallet.name %></h4>
+                    <p><%= wallet.description %></p>
+                    <p id="wallet_price"><%= wallet.price %> грн</p>
+
+                </div>
+                <!-- <div>
+                    <p>Гравіювання: <br>
+                        <div id="first-buy-engraving-img"></div>
+                        <p id="first-buy-text"></p>
+                        <br>
+                        <p id="first-buy-own-text"></p>
+                    </p>
+                </div> -->
+                <div></div>
+                <div>
+                    <button class="buy-button-edit" onclick="close_cart()">Продовжити покупки</button>
+                </div>
+                <a href="/cart">
+                    <button class="buy-button-confirmation">Оформити замовлення</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ("../partials/footer") %>

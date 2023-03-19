@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="strict-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="/stylesheets/tablet.css" media="screen and (min-width: 576px)">
+    <link rel="stylesheet" href="/stylesheets/laptop.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="/stylesheets/bigscreen.css" media="screen and (min-width: 992px)">
+    <link rel="icon" href="/Images/poda-icon.png">
+    <script src="https://use.fontawesome.com/ee99e691b8.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <title>Інтернет-магазин PODA</title>
+</head>
+
+<body onload="create_cart()">
+    <header>
+        <div class="info">
+            <span>У зв’язку з карантином відправки відбуваються раз на два дні</span>
+        </div>
+        <div class="header-nav">
+            <div class="header-grid-elements menus">
+                <div class="menu-wrap">
+                    <input type="checkbox" class="toggler">
+                    <div class="hamburger">
+                        <div></div>
+                    </div>
+                    <div class="menu">
+                        <div>
+                            <div>
+                                <ul>
+                                    <li><a href="/stock">!ЗНИЖКИ</a></li>
+                                    <li><a href="/keychains">БРЕЛОКИ</a></li>
+                                    <li><a href="/cups">ЧАШКИ</a></li>
+                                    <li class="leather-min-menu">
+                                        <a href="/leather">ШКІРЯНІ ВИРОБИ</a>
+                                        <ul>
+                                            <li><a href="/wallets">ГАМАНЦІ</a></li>
+                                            <li><a href="/belts">РЕМЕНІ</a></li>
+                                            <li><a href="/covers">ОБКЛАДИНКИ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/clothes">ОДЯГ</a></li>
+                                    <li><a href="/magnets">МАГНІТИ</a></li>
+                                    <li><a href="#">КОНТАКТИ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="menu-big">
+                    <ul>
+                        <li><a href="/stock">!ЗНИЖКИ</a></li>
+                        <li><a href="/keychains">БРЕЛОКИ</a></li>
+                        <li><a href="/cups">ЧАШКИ</a></li>
+                        <li class="leather-products">
+                            <ul class="leather">
+                                <li><a href="/wallets">ГАМАНЦІ</a></li>
+                                <li><a href="/belts">РЕМЕНІ</a></li>
+                                <li><a href="/covers">ОБКЛАДИНКИ</a></li>
+                            </ul>
+                            <a href="/leather">ШКІРЯНІ ВИРОБИ <i class="fas fa-caret-down"></i></a>
+
+                        </li>
+                        <li><a href="/clothes">ОДЯГ</a></li>
+                        <li><a href="/magnets">МАГНІТИ</a></li>
+                        <li><a href="/contacts">КОНТАКТИ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-grid-elements logos">
+                <a href="/"><img src="/Images/logoPoda.jpg" alt=""></a>
+            </div>
+            <div class="header-grid-elements medias">
+                <div class="social-media">
+                    <ul>
+                        <li><a href="https://www.instagram.com/poda.im/"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        <li><a href="https://www.facebook.com/poda.im/"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                        <!-- <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li> -->
+                    </ul>
+                    <ul>
+                        <!-- <li><a href="#"><i class="fas fa-user fa-lg"></i></a></li> -->
+                        <li><span id="shopping-cart-icon">TESST!</span><a href="/cart"><i
+                                    class="fas fa-shopping-cart fa-lg"></i></a></li>
+                        <!-- <li><a href="#"><i class="fas fa-heart fa-lg"></i></a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>

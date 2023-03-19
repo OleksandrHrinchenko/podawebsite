@@ -1,0 +1,16 @@
+<%- include ("../partials/header") %>
+<h2 class="section-header">БРЕЛОКИ</h2>
+<hr class="section-header-hr">
+<div class="main">
+    <% keychains.forEach(function(keychain){ %>
+    <a class="product-more-info" href="/keychains/<%= keychain._id %>">
+        <div class="product">
+            <img class="product-image" src="/Images/gallery/keychains/<%= keychain.image %>">
+            <p class="product-name"><%= keychain.name %></p>
+            <p class="product-price"><%= keychain.price %> &#8372;</p>
+        </div>
+        <hr class="product-hr">
+    </a>
+    <% }); %>
+</div>
+<%- include ("../partials/footer") %>

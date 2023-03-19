@@ -1,0 +1,77 @@
+<%- include ("partials/header") %>
+
+<h1 class="page-title">Оформлення замовлення</h1>
+
+<div id="checkout-first">
+  <form>
+    <input type="text" id="clients-surname" name="lastname" placeholder="Прізвище" /><br />
+    <input type="text" id="clients-name" name="firstname" placeholder="Ім'я" /><br />
+    <input type="text" id="clients-phone" name="phonenumber" placeholder="Телефон" maxlength="17" /><br />
+  </form>
+  <button class="to-payment" onclick="payment()">
+    Обрати доставку і оплату
+  </button>
+</div>
+
+<div id="checkout-second">
+  <div class="shipping">
+    <div onclick="shipping(0)" id="noshipping">Самовівіз</div>
+    <div onclick="shipping(1)" id="novaposhta-shipping">Нова пошта</div>
+    <div onclick="shipping(2)" id="ukrposhta-shipping">Укрпошта</div>
+  </div>
+
+  <div id="shipping_0" class="ship">
+    <h4>
+      Самовівіз із магазину за адресою - місто Київ, вулиця Євгена Сверстюка 21.
+    </h4>
+    <label for="comment">Коментар до замовлення</label>
+    <textarea name="comment" class="comment" id="comment_sm"></textarea>
+  </div>
+  <div id="shipping_1" class="ship">
+    <h4>Доставка Новою Поштою</h4>
+    <label for="city_np">Населений пункт</label><br />
+    <input type="text" name="city_np" id="city_np" class="postal_inputs" /><br />
+    <label for="postal_office_np">Номер відділення</label>
+    <input type="text" name="postal_office_np" id="postal_office_np" class="postal_inputs postal_offices" /><br />
+    <label for="comment">Коментар до замовлення</label>
+    <textarea name="comment" class="comment" id="comment_np"></textarea>
+  </div>
+  <div id="shipping_2" class="ship">
+    <h4>Доставка Укрпоштою</h4>
+    <label for="city_np">Населений пункт</label><br />
+    <input type="text" name="city_up" id="city_up" class="postal_inputs" /><br />
+    <label for="postal_office_up">Адреса</label>
+    <input type="text" name="postal_office_up" id="postal_office_up" class="postal_inputs" />
+    <label for="index">Індекс</label>
+    <input type="text" name="index" id="index_code" class="postal_inputs postal_offices" /><br />
+    <label for="comment">Коментар до замовлення</label>
+    <textarea name="comment" class="comment" id="comment_up"></textarea>
+  </div>
+
+  <div class="paying">
+    <div id="paying_method_1" onclick="paying_method(0)">Оплата на картку</div>
+    <div id="paying_method_2" onclick="paying_method(1)">Оплата при отриманні</div>
+  </div>
+  <br />
+  <p id="paying_method_innerText">Оберіть метод оплати.</p>
+
+  <form action="complete" method="POST">
+    <input type="text" name="order" id="user_order" class="hidden" />
+    <input type="text" name="firstname" id="user_firstname" class="hidden" />
+    <input type="text" name="lastname" id="user_lastname" class="hidden" />
+    <input type="text" name="phone" id="user_phone" class="hidden" />
+    <input type="text" name="delivery" id="delivery" class="hidden" />
+    <input type="text" name="city" id="user_city" class="hidden" />
+    <input type="text" name="post_office" id="post_office" class="hidden" />
+    <input type="text" name="comment" id="user_comment" class="hidden" />
+    <input type="text" name="payment" id="user_payment" class="hidden" />
+    <input type="text" name="user_index" id="user_index" class="hidden" />
+    <input type="text" name="is_it_done" id="c_1" style="display: none;" />
+    <input type="text" name="c_true" id="c_true" style="display: none;" />
+    <button id="order-finale" onclick="fill_the_cart(1)">
+      Зробити замовлення
+    </button>
+  </form>
+</div>
+
+<%- include ("partials/footer") %>

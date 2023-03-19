@@ -1,0 +1,19 @@
+<%- include ("../partials/header") %>
+<h1>Admin panel</h1>
+<h2>EDIT <%= wallet.name %></h2>
+<form action="/wallets/<%= wallet._id %>?_method=PUT" method="POST">
+    <label for="name">Назва:</label>
+    <input type="text" name="wallet[name]" value="<%= wallet.name %>">
+    <br>
+    <label for="price">Ціна:</label>
+    <input type="text" name="wallet[price]" value="<%= wallet.price %>">
+    <br>
+    <label for="description">Опис:</label>
+    <textarea name="wallet[description]" id="" cols="30" rows="10"><%= wallet.description %></textarea>
+    <br>
+    <label for="image">Зображення:</label>
+    <input type="file" name="wallet[image]" accept=".jpg,.png">
+    <br>
+    <button>Додати</button>
+</form>
+<%- include ("../partials/footer") %>

@@ -1,0 +1,19 @@
+<%- include ("../partials/header") %>
+<h1>Admin panel</h1>
+<h2>EDIT <%= stock.name %></h2>
+<form action="/stock/<%= stock._id %>?_method=PUT" method="POST">
+    <label for="name">Назва:</label>
+    <input type="text" name="stock[name]" value="<%= stock.name %>">
+    <br>
+    <label for="price">Ціна:</label>
+    <input type="text" name="stock[price]" value="<%= stock.price %>">
+    <br>
+    <label for="description">Опис:</label>
+    <textarea name="stock[description]" id="" cols="30" rows="10"><%= stock.description %></textarea>
+    <br>
+    <label for="image">Зображення:</label>
+    <input type="file" name="stock[image]" accept=".jpg,.png">
+    <br>
+    <button>Додати</button>
+</form>
+<%- include ("../partials/footer") %>

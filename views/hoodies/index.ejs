@@ -1,0 +1,16 @@
+<%- include ("../partials/header") %>
+<h2 class="section-header">ТОЛСТОВКИ</h2>
+<hr class="section-header-hr">
+<div class="main">
+    <% hoodies.forEach(function(hoodie){ %>
+    <a class="product-more-info" href="/hoodies/<%= hoodie._id %>">
+        <div class="product">
+            <img class="product-image" src="/Images/gallery/hoodies/<%= hoodie.image %>">
+            <p class="product-name"><%= hoodie.name %></p>
+            <p class="product-price"><%= hoodie.price %> &#8372;</p>
+        </div>
+        <hr class="product-hr">
+    </a>
+    <% }); %>
+</div>
+<%- include ("../partials/footer") %>

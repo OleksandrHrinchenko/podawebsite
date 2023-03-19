@@ -1,0 +1,30 @@
+
+footer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    width: 100%;
+    min-width: 320px;
+    font-family: 'Roboto Slab', serif;
+  }
+  footer div {
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  footer div h4 {
+    font-weight: 400;
+  }
+  footer div ul li {
+    font-weight: 800;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 15%;
+    list-style-type: none;
+    font-family: "Roboto", sans-serif;
+  }
+  .copywrite {
+    font-weight: 800;
+    font-size: 0.7rem;
+    padding: 20px;
+    text-align: right;
+  }
